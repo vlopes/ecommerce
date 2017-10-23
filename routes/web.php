@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-})->name('fodasse');
+})->name('/');
 
 Auth::routes();
 Route::get('/verify/{token}', 'Auth\RegisterController@verify')->name('verify_account');

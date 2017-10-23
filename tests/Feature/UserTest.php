@@ -12,30 +12,10 @@ class UserTest extends TestCase
      *
      * @return void
      */
-    // public function testBasicTest()
-    // {
-    //     $response = $this->get('/');
-
-    //     $response->assertStatus(200);
-    // }
-
-    /** @test */
-    public function userCanRegister()
+    public function testBasicTest()
     {
-        $response = $this->post('/register', [
-            'first_name' => 'First',
-            'last_name' => 'Last',
-            'email' => 'test@test.com',
-            'password' => 'secret',
-            'password_confirmation' => 'secret',
-            'token' => csrf_token(),
-        ]);
-            
+        $response = $this->get('/');
+
         $response->assertStatus(200);
-        
-        $this->assertDatabaseHas('users', [
-            'email' => 'test@test.com',
-            'confirmed' => false,
-        ]);
     }
 }
